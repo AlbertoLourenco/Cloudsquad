@@ -15,5 +15,6 @@ class SharedViewData: ObservableObject {
     @Published var post: Post?
     
     @Published var showPosts: Bool = false
+    @Published var showPostsAdd: Bool = false
     @Published var showPostsDetail: Bool = false
 }

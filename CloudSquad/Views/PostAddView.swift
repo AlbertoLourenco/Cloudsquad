@@ -1,16 +1,14 @@
 //
-//  PostDetailView.swift
+//  PostAddView.swift
 //  CloudSquad
 //
-//  Created by Alberto Lourenço on 2/13/20.
+//  Created by Alberto Lourenço on 2/14/20.
 //  Copyright © 2020 Alberto Lourenço. All rights reserved.
 //
 
 import SwiftUI
 
-struct PostDetailView: View {
-    
-    var post: Post!
+struct PostAddView: View {
     
     var body: some View {
         
@@ -21,22 +19,21 @@ struct PostDetailView: View {
             LinearGradient(gradient: Gradient(colors: [Color.blue.opacity(0.05), Color.white]), startPoint: .top, endPoint: .bottom)
                 .edgesIgnoringSafeArea(.all)
             
-            WebImage(imageURL: post.imageURL)
-                .frame(width: 200, height: 200, alignment: .center)
-
+            Text("Hello, World!")
+            
             ButtonClose()
                 .onTapGesture {
-                    SharedViewData.shared.showPostsDetail = false
+                    SharedViewData.shared.showPostsAdd = false
                 }
         }
         .onDisappear() {
-            SharedViewData.shared.showPostsDetail = false
+            SharedViewData.shared.showPostsAdd = false
         }
     }
 }
 
-struct PostDetailView_Previews: PreviewProvider {
+struct PostAddView_Previews: PreviewProvider {
     static var previews: some View {
-        PostDetailView()
+        PostAddView()
     }
 }

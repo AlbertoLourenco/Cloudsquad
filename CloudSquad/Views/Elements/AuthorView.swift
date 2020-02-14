@@ -25,6 +25,7 @@ struct AuthorView: View {
                 Text(post.author.name)
                     .fontWeight(.semibold)
                     .font(.system(size: 18))
+                    .foregroundColor(Color.black)
                 
                 Text(post.author.twitter)
                     .foregroundColor(Color.blue)

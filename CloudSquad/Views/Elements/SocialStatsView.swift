@@ -21,7 +21,7 @@ struct SocialStatsView: View {
                 Image("Post-Like")
                     .resizable()
                     .clipped()
-                    .frame(width: 20, height: 20)
+                    .frame(width: 22, height: 22)
                 
                 Text("\(post.amountLikes)")
                     .font(.body)
@@ -37,7 +37,7 @@ struct SocialStatsView: View {
                 Image("Post-Comment")
                     .resizable()
                     .clipped()
-                    .frame(width: 20, height: 20)
+                    .frame(width: 22, height: 22)
                 
                 Text("\(post.amountComments)")
                     .font(.body)

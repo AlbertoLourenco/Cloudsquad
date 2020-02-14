@@ -34,18 +34,19 @@ struct PostImageView: View {
             
             SocialStatsView(post: post)
                 .frame(width: UIScreen.main.bounds.width - 40, height: 40)
+            
+            Spacer()
         }
-        .padding(EdgeInsets(top: 0, leading: 10, bottom: 10, trailing: 10))
-        .frame(width: UIScreen.main.bounds.width - 40, height: 520)
         .background(Color.white)
         .clipped()
         .cornerRadius(20)
-        .shadow(color: Color.gray.opacity(0.5), radius: 20, x: 0, y: 0)
+        .shadow(color: Color.gray.opacity(0.4), radius: 20, x: 0, y: 0)
         .onTapGesture {
             
             SharedViewData.shared.post = self.post
             SharedViewData.shared.showPostsDetail = true
         }
+        .frame(width: Constants.screenSize.width - 40, height: 520)
     }
 }
 

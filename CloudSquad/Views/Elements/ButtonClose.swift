@@ -1,5 +1,5 @@
 //
-//  CloseButton.swift
+//  ButtonClose.swift
 //  CloudSquad
 //
 //  Created by Alberto Lourenço on 2/13/20.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct CloseButton: View {
+struct ButtonClose: View {
 
     var body: some View {
 

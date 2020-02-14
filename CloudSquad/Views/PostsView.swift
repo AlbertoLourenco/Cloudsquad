@@ -31,6 +31,7 @@ struct PostsView: View {
                     Text("Welcome, \(userName)")
                         .fontWeight(.bold)
                         .font(.system(size: 24))
+                        .foregroundColor(Color.black)
                     
                     Spacer()
                     
@@ -49,7 +50,7 @@ struct PostsView: View {
                     VStack (spacing: 30) {
                         
                         ForEach(self.posts) { item in
-
+                            
                             if item.imageURL.isEmpty {
                                 PostTextView(post: item)
                             }else{
@@ -57,12 +58,14 @@ struct PostsView: View {
                             }
                         }
                     }
-                    .padding(EdgeInsets(top: 20, leading: 30, bottom: 30, trailing: 30))
+                    .padding(EdgeInsets(top: 20, leading: 30, bottom: 120, trailing: 30))
                     .frame(width: UIScreen.main.bounds.width)
                 }
                 
                 Spacer()
             }
+
+            ButtonAdd()
         }
         .onAppear() {
             

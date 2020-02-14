@@ -31,8 +31,15 @@ struct ContainerView: View {
             //---------------------------
             
             if viewStates.showPosts {
-                
                 PostsView()
+            }
+            
+            //---------------------------
+            //  Posts - Add
+            //---------------------------
+            
+            if viewStates.showPostsAdd {
+                SheetView(type: .postAdd)
             }
             
             //---------------------------
@@ -40,16 +47,7 @@ struct ContainerView: View {
             //---------------------------
             
             if viewStates.showPostsDetail {
-                
-                if self.viewStates.post != nil {
-
-                    PostDetailView(post: self.viewStates.post!)
-
-                    CloseButton()
-                        .onTapGesture {
-                            self.viewStates.showPostsDetail = false
-                        }
-                }
+                SheetView(type: .postDetail)
             }
         }
     }
