@@ -1,0 +1,708 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1628F54923F078150049D24C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1628F54823F078150049D24C /* AppDelegate.swift */; };
+		1628F54B23F078150049D24C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1628F54A23F078150049D24C /* SceneDelegate.swift */; };
+		1628F54E23F078150049D24C /* CloudSquad.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1628F54C23F078150049D24C /* CloudSquad.xcdatamodeld */; };
+		1628F55023F078150049D24C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1628F54F23F078150049D24C /* LoginView.swift */; };
+		1628F55223F078160049D24C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1628F55123F078160049D24C /* Assets.xcassets */; };
+		1628F55523F078160049D24C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1628F55423F078160049D24C /* Preview Assets.xcassets */; };
+		1628F55823F078160049D24C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1628F55623F078160049D24C /* LaunchScreen.storyboard */; };
+		1628F56323F078160049D24C /* CloudSquadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1628F56223F078160049D24C /* CloudSquadTests.swift */; };
+		1628F56E23F078160049D24C /* CloudSquadUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1628F56D23F078160049D24C /* CloudSquadUITests.swift */; };
+		162A8E0323F4D5F900168CE9 /* URLMockSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162A8E0223F4D5F900168CE9 /* URLMockSession.swift */; };
+		162A8E0723F4D68500168CE9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162A8E0623F4D68500168CE9 /* User.swift */; };
+		16580D0F23F5DBB600D10983 /* PostsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16580D0E23F5DBB600D10983 /* PostsView.swift */; };
+		16580D1323F5DEFE00D10983 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16580D1223F5DEFE00D10983 /* Session.swift */; };
+		16580D1523F5F3C100D10983 /* PostDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16580D1423F5F3C100D10983 /* PostDetailView.swift */; };
+		16AE78AF23F60DEB0067AEA3 /* SharedViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AE78AE23F60DEB0067AEA3 /* SharedViewData.swift */; };
+		16AE78B123F6117A0067AEA3 /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AE78B023F6117A0067AEA3 /* ContainerView.swift */; };
+		16AE78B423F617BB0067AEA3 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AE78B323F617BB0067AEA3 /* CloseButton.swift */; };
+		16AE78B623F61FF30067AEA3 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AE78B523F61FF30067AEA3 /* Post.swift */; };
+		16AE78B823F6200F0067AEA3 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AE78B723F6200F0067AEA3 /* Comment.swift */; };
+		16AE78BA23F636E90067AEA3 /* PostTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AE78B923F636E90067AEA3 /* PostTextView.swift */; };
+		16AE78BC23F636F60067AEA3 /* PostImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AE78BB23F636F60067AEA3 /* PostImageView.swift */; };
+		16AE78BE23F637460067AEA3 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AE78BD23F637460067AEA3 /* RequestManager.swift */; };
+		16BD841023F63A7500A58785 /* WebImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BD840F23F63A7500A58785 /* WebImage.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1628F55F23F078160049D24C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1628F53D23F078150049D24C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1628F54423F078150049D24C;
+			remoteInfo = CloudSquad;
+		};
+		1628F56A23F078160049D24C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1628F53D23F078150049D24C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1628F54423F078150049D24C;
+			remoteInfo = CloudSquad;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1628F54523F078150049D24C /* CloudSquad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CloudSquad.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1628F54823F078150049D24C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1628F54A23F078150049D24C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		1628F54D23F078150049D24C /* CloudSquad.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CloudSquad.xcdatamodel; sourceTree = "<group>"; };
+		1628F54F23F078150049D24C /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		1628F55123F078160049D24C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1628F55423F078160049D24C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1628F55723F078160049D24C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1628F55923F078160049D24C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1628F55E23F078160049D24C /* CloudSquadTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CloudSquadTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1628F56223F078160049D24C /* CloudSquadTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudSquadTests.swift; sourceTree = "<group>"; };
+		1628F56423F078160049D24C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1628F56923F078160049D24C /* CloudSquadUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CloudSquadUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1628F56D23F078160049D24C /* CloudSquadUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudSquadUITests.swift; sourceTree = "<group>"; };
+		1628F56F23F078160049D24C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		162A8E0223F4D5F900168CE9 /* URLMockSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLMockSession.swift; sourceTree = "<group>"; };
+		162A8E0623F4D68500168CE9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		16580D0E23F5DBB600D10983 /* PostsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsView.swift; sourceTree = "<group>"; };
+		16580D1223F5DEFE00D10983 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		16580D1423F5F3C100D10983 /* PostDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailView.swift; sourceTree = "<group>"; };
+		16AE78AE23F60DEB0067AEA3 /* SharedViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedViewData.swift; sourceTree = "<group>"; };
+		16AE78B023F6117A0067AEA3 /* ContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
+		16AE78B323F617BB0067AEA3 /* CloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
+		16AE78B523F61FF30067AEA3 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		16AE78B723F6200F0067AEA3 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		16AE78B923F636E90067AEA3 /* PostTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTextView.swift; sourceTree = "<group>"; };
+		16AE78BB23F636F60067AEA3 /* PostImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostImageView.swift; sourceTree = "<group>"; };
+		16AE78BD23F637460067AEA3 /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
+		16BD840F23F63A7500A58785 /* WebImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebImage.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1628F54223F078150049D24C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1628F55B23F078160049D24C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1628F56623F078160049D24C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1628F53C23F078150049D24C = {
+			isa = PBXGroup;
+			children = (
+				1628F54723F078150049D24C /* CloudSquad */,
+				1628F56123F078160049D24C /* CloudSquadTests */,
+				1628F56C23F078160049D24C /* CloudSquadUITests */,
+				1628F54623F078150049D24C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1628F54623F078150049D24C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1628F54523F078150049D24C /* CloudSquad.app */,
+				1628F55E23F078160049D24C /* CloudSquadTests.xctest */,
+				1628F56923F078160049D24C /* CloudSquadUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1628F54723F078150049D24C /* CloudSquad */ = {
+			isa = PBXGroup;
+			children = (
+				16580D1123F5DCB500D10983 /* Application */,
+				16580D1023F5DBBF00D10983 /* Views */,
+				162A8E0523F4D66900168CE9 /* Entities */,
+				162A8E0423F4D61700168CE9 /* Classes */,
+				1628F55323F078160049D24C /* Preview Content */,
+			);
+			path = CloudSquad;
+			sourceTree = "<group>";
+		};
+		1628F55323F078160049D24C /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				1628F55423F078160049D24C /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1628F56123F078160049D24C /* CloudSquadTests */ = {
+			isa = PBXGroup;
+			children = (
+				1628F56223F078160049D24C /* CloudSquadTests.swift */,
+				1628F56423F078160049D24C /* Info.plist */,
+			);
+			path = CloudSquadTests;
+			sourceTree = "<group>";
+		};
+		1628F56C23F078160049D24C /* CloudSquadUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1628F56D23F078160049D24C /* CloudSquadUITests.swift */,
+				1628F56F23F078160049D24C /* Info.plist */,
+			);
+			path = CloudSquadUITests;
+			sourceTree = "<group>";
+		};
+		162A8E0423F4D61700168CE9 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				16580D1223F5DEFE00D10983 /* Session.swift */,
+				16BD840F23F63A7500A58785 /* WebImage.swift */,
+				16AE78AE23F60DEB0067AEA3 /* SharedViewData.swift */,
+				16AE78BD23F637460067AEA3 /* RequestManager.swift */,
+				162A8E0223F4D5F900168CE9 /* URLMockSession.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		162A8E0523F4D66900168CE9 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				162A8E0623F4D68500168CE9 /* User.swift */,
+				16AE78B523F61FF30067AEA3 /* Post.swift */,
+				16AE78B723F6200F0067AEA3 /* Comment.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		16580D1023F5DBBF00D10983 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				16AE78B223F617AA0067AEA3 /* Elements */,
+				16AE78B023F6117A0067AEA3 /* ContainerView.swift */,
+				1628F54F23F078150049D24C /* LoginView.swift */,
+				16580D0E23F5DBB600D10983 /* PostsView.swift */,
+				16580D1423F5F3C100D10983 /* PostDetailView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		16580D1123F5DCB500D10983 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				1628F55923F078160049D24C /* Info.plist */,
+				1628F54823F078150049D24C /* AppDelegate.swift */,
+				1628F54A23F078150049D24C /* SceneDelegate.swift */,
+				1628F55123F078160049D24C /* Assets.xcassets */,
+				1628F55623F078160049D24C /* LaunchScreen.storyboard */,
+				1628F54C23F078150049D24C /* CloudSquad.xcdatamodeld */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		16AE78B223F617AA0067AEA3 /* Elements */ = {
+			isa = PBXGroup;
+			children = (
+				16AE78B323F617BB0067AEA3 /* CloseButton.swift */,
+				16AE78B923F636E90067AEA3 /* PostTextView.swift */,
+				16AE78BB23F636F60067AEA3 /* PostImageView.swift */,
+			);
+			path = Elements;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1628F54423F078150049D24C /* CloudSquad */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1628F57223F078160049D24C /* Build configuration list for PBXNativeTarget "CloudSquad" */;
+			buildPhases = (
+				1628F54123F078150049D24C /* Sources */,
+				1628F54223F078150049D24C /* Frameworks */,
+				1628F54323F078150049D24C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CloudSquad;
+			productName = CloudSquad;
+			productReference = 1628F54523F078150049D24C /* CloudSquad.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1628F55D23F078160049D24C /* CloudSquadTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1628F57523F078160049D24C /* Build configuration list for PBXNativeTarget "CloudSquadTests" */;
+			buildPhases = (
+				1628F55A23F078160049D24C /* Sources */,
+				1628F55B23F078160049D24C /* Frameworks */,
+				1628F55C23F078160049D24C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1628F56023F078160049D24C /* PBXTargetDependency */,
+			);
+			name = CloudSquadTests;
+			productName = CloudSquadTests;
+			productReference = 1628F55E23F078160049D24C /* CloudSquadTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1628F56823F078160049D24C /* CloudSquadUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1628F57823F078160049D24C /* Build configuration list for PBXNativeTarget "CloudSquadUITests" */;
+			buildPhases = (
+				1628F56523F078160049D24C /* Sources */,
+				1628F56623F078160049D24C /* Frameworks */,
+				1628F56723F078160049D24C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1628F56B23F078160049D24C /* PBXTargetDependency */,
+			);
+			name = CloudSquadUITests;
+			productName = CloudSquadUITests;
+			productReference = 1628F56923F078160049D24C /* CloudSquadUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1628F53D23F078150049D24C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "Alberto Lourenço";
+				TargetAttributes = {
+					1628F54423F078150049D24C = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					1628F55D23F078160049D24C = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = 1628F54423F078150049D24C;
+					};
+					1628F56823F078160049D24C = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = 1628F54423F078150049D24C;
+					};
+				};
+			};
+			buildConfigurationList = 1628F54023F078150049D24C /* Build configuration list for PBXProject "CloudSquad" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1628F53C23F078150049D24C;
+			productRefGroup = 1628F54623F078150049D24C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1628F54423F078150049D24C /* CloudSquad */,
+				1628F55D23F078160049D24C /* CloudSquadTests */,
+				1628F56823F078160049D24C /* CloudSquadUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1628F54323F078150049D24C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1628F55823F078160049D24C /* LaunchScreen.storyboard in Resources */,
+				1628F55523F078160049D24C /* Preview Assets.xcassets in Resources */,
+				1628F55223F078160049D24C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1628F55C23F078160049D24C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1628F56723F078160049D24C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1628F54123F078150049D24C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16AE78BE23F637460067AEA3 /* RequestManager.swift in Sources */,
+				16580D1523F5F3C100D10983 /* PostDetailView.swift in Sources */,
+				16BD841023F63A7500A58785 /* WebImage.swift in Sources */,
+				16580D0F23F5DBB600D10983 /* PostsView.swift in Sources */,
+				1628F54923F078150049D24C /* AppDelegate.swift in Sources */,
+				16AE78B823F6200F0067AEA3 /* Comment.swift in Sources */,
+				1628F54E23F078150049D24C /* CloudSquad.xcdatamodeld in Sources */,
+				16AE78B623F61FF30067AEA3 /* Post.swift in Sources */,
+				162A8E0723F4D68500168CE9 /* User.swift in Sources */,
+				16580D1323F5DEFE00D10983 /* Session.swift in Sources */,
+				16AE78B423F617BB0067AEA3 /* CloseButton.swift in Sources */,
+				16AE78BA23F636E90067AEA3 /* PostTextView.swift in Sources */,
+				1628F55023F078150049D24C /* LoginView.swift in Sources */,
+				1628F54B23F078150049D24C /* SceneDelegate.swift in Sources */,
+				16AE78AF23F60DEB0067AEA3 /* SharedViewData.swift in Sources */,
+				16AE78BC23F636F60067AEA3 /* PostImageView.swift in Sources */,
+				16AE78B123F6117A0067AEA3 /* ContainerView.swift in Sources */,
+				162A8E0323F4D5F900168CE9 /* URLMockSession.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1628F55A23F078160049D24C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1628F56323F078160049D24C /* CloudSquadTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1628F56523F078160049D24C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1628F56E23F078160049D24C /* CloudSquadUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1628F56023F078160049D24C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1628F54423F078150049D24C /* CloudSquad */;
+			targetProxy = 1628F55F23F078160049D24C /* PBXContainerItemProxy */;
+		};
+		1628F56B23F078160049D24C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1628F54423F078150049D24C /* CloudSquad */;
+			targetProxy = 1628F56A23F078160049D24C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1628F55623F078160049D24C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1628F55723F078160049D24C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1628F57023F078160049D24C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1628F57123F078160049D24C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1628F57323F078160049D24C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"CloudSquad/Preview Content\"";
+				DEVELOPMENT_TEAM = 8G88K2N9TE;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = CloudSquad/Application/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.digit.all.CloudSquad;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1628F57423F078160049D24C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"CloudSquad/Preview Content\"";
+				DEVELOPMENT_TEAM = 8G88K2N9TE;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = CloudSquad/Application/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.digit.all.CloudSquad;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		1628F57623F078160049D24C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CloudSquadTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.digit.all.CloudSquadTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CloudSquad.app/CloudSquad";
+			};
+			name = Debug;
+		};
+		1628F57723F078160049D24C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CloudSquadTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.digit.all.CloudSquadTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CloudSquad.app/CloudSquad";
+			};
+			name = Release;
+		};
+		1628F57923F078160049D24C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CloudSquadUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.digit.all.CloudSquadUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CloudSquad;
+			};
+			name = Debug;
+		};
+		1628F57A23F078160049D24C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CloudSquadUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.digit.all.CloudSquadUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CloudSquad;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1628F54023F078150049D24C /* Build configuration list for PBXProject "CloudSquad" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1628F57023F078160049D24C /* Debug */,
+				1628F57123F078160049D24C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1628F57223F078160049D24C /* Build configuration list for PBXNativeTarget "CloudSquad" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1628F57323F078160049D24C /* Debug */,
+				1628F57423F078160049D24C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1628F57523F078160049D24C /* Build configuration list for PBXNativeTarget "CloudSquadTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1628F57623F078160049D24C /* Debug */,
+				1628F57723F078160049D24C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1628F57823F078160049D24C /* Build configuration list for PBXNativeTarget "CloudSquadUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1628F57923F078160049D24C /* Debug */,
+				1628F57A23F078160049D24C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1628F54C23F078150049D24C /* CloudSquad.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1628F54D23F078150049D24C /* CloudSquad.xcdatamodel */,
+			);
+			currentVersion = 1628F54D23F078150049D24C /* CloudSquad.xcdatamodel */;
+			path = CloudSquad.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 1628F53D23F078150049D24C /* Project object */;
+}
