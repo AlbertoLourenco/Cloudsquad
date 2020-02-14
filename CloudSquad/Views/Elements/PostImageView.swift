@@ -28,7 +28,9 @@ struct PostImageView: View {
                 .font(.system(size: 16))
                 .foregroundColor(Color.black.opacity(0.6))
                 .padding(.horizontal)
-                .lineLimit(nil)
+                .frame(alignment: .leading)
+            
+            Spacer()
             
             SocialStatsView(post: post)
                 .frame(width: UIScreen.main.bounds.width - 40, height: 40)

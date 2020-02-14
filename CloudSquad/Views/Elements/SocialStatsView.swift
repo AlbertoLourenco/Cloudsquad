@@ -46,7 +46,7 @@ struct SocialStatsView: View {
             }
             .padding(.horizontal)
         }
-        .frame(width: UIScreen.main.bounds.width - 40, height: 20, alignment: .leading)
+        .frame(width: UIScreen.main.bounds.width - 60, height: 20, alignment: .leading)
         .padding(.horizontal)
     }
 }
