@@ -32,6 +32,7 @@
 		16BD841023F63A7500A58785 /* WebImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BD840F23F63A7500A58785 /* WebImage.swift */; };
 		16E5C74123F7148E009766E8 /* MockedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E5C74023F7148E009766E8 /* MockedData.swift */; };
 		16E5C74323F71D2C009766E8 /* AuthorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E5C74223F71D2C009766E8 /* AuthorView.swift */; };
+		16E5C74523F729E9009766E8 /* SocialStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E5C74423F729E9009766E8 /* SocialStatsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		16BD840F23F63A7500A58785 /* WebImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebImage.swift; sourceTree = "<group>"; };
 		16E5C74023F7148E009766E8 /* MockedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedData.swift; sourceTree = "<group>"; };
 		16E5C74223F71D2C009766E8 /* AuthorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorView.swift; sourceTree = "<group>"; };
+		16E5C74423F729E9009766E8 /* SocialStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialStatsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +225,7 @@
 				16AE78B323F617BB0067AEA3 /* CloseButton.swift */,
 				16AE78B923F636E90067AEA3 /* PostTextView.swift */,
 				16AE78BB23F636F60067AEA3 /* PostImageView.swift */,
+				16E5C74423F729E9009766E8 /* SocialStatsView.swift */,
 			);
 			path = Elements;
 			sourceTree = "<group>";
@@ -362,6 +365,7 @@
 				16580D1523F5F3C100D10983 /* PostDetailView.swift in Sources */,
 				16BD841023F63A7500A58785 /* WebImage.swift in Sources */,
 				16580D0F23F5DBB600D10983 /* PostsView.swift in Sources */,
+				16E5C74523F729E9009766E8 /* SocialStatsView.swift in Sources */,
 				1628F54923F078150049D24C /* AppDelegate.swift in Sources */,
 				16E5C74323F71D2C009766E8 /* AuthorView.swift in Sources */,
 				16AE78B823F6200F0067AEA3 /* Comment.swift in Sources */,

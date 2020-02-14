@@ -28,11 +28,13 @@ struct PostImageView: View {
                 .font(.system(size: 16))
                 .foregroundColor(Color.black.opacity(0.6))
                 .padding(.horizontal)
+                .lineLimit(nil)
             
-            Spacer()
+            SocialStatsView(post: post)
+                .frame(width: UIScreen.main.bounds.width - 40, height: 40)
         }
         .padding(EdgeInsets(top: 0, leading: 10, bottom: 10, trailing: 10))
-        .frame(width: UIScreen.main.bounds.width - 40, height: 500)
+        .frame(width: UIScreen.main.bounds.width - 40, height: 520)
         .background(Color.white)
         .clipped()
         .cornerRadius(20)

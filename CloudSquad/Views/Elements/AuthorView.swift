@@ -33,10 +33,13 @@ struct AuthorView: View {
                     .font(.system(size: 14))
                     .foregroundColor(Color.gray.opacity(0.9))
             }
+            .padding(.leading, 5)
             
             Spacer()
         }
         .padding(.horizontal)
+        .padding(.top, 10)
+        .padding(.bottom, 10)
     }
 }
 

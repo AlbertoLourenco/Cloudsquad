@@ -25,7 +25,8 @@ struct PostTextView: View {
                 .foregroundColor(Color.black.opacity(0.6))
                 .padding(.horizontal)
             
-            Spacer()
+            SocialStatsView(post: post)
+                .frame(width: UIScreen.main.bounds.width - 40, height: 40)
         }
         .padding()
         .frame(width: UIScreen.main.bounds.width - 40, height: 290, alignment: .center)

@@ -43,12 +43,12 @@ struct PostsView: View {
                 }
                 .padding(.horizontal)
                 .padding(.top, 64)
-                
+
                 ScrollView (.vertical, showsIndicators: false) {
 
                     VStack (spacing: 30) {
                         
-                        ForEach(posts) { item in
+                        ForEach(self.posts) { item in
 
                             if item.imageURL.isEmpty {
                                 PostTextView(post: item)
