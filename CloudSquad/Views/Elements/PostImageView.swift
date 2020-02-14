@@ -17,17 +17,22 @@ struct PostImageView: View {
         VStack {
 
             WebImage(imageURL: post.imageURL)
-            .frame(width: UIScreen.main.bounds.width - 40, height: 210)
-            .clipped()
+                .frame(width: UIScreen.main.bounds.width - 40, height: 210)
+                .clipped()
+            
+            AuthorView(post: post)
+                .frame(width: UIScreen.main.bounds.width - 40)
             
             Text(post.text)
-            .font(.body)
-            .foregroundColor(Color.black.opacity(0.6))
+                .fontWeight(.medium)
+                .font(.system(size: 16))
+                .foregroundColor(Color.black.opacity(0.6))
+                .padding(.horizontal)
             
             Spacer()
         }
         .padding(EdgeInsets(top: 0, leading: 10, bottom: 10, trailing: 10))
-        .frame(width: UIScreen.main.bounds.width - 40, height: 400)
+        .frame(width: UIScreen.main.bounds.width - 40, height: 500)
         .background(Color.white)
         .clipped()
         .cornerRadius(20)

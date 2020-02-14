@@ -13,7 +13,7 @@ struct PostsView: View {
     @State var posts: Array<Post> = []
     
     @State var userName: String = Session.get().name.components(separatedBy: " ").first!
-    @State var userAvatar: String = Session.get().pictureURL ?? ""
+    @State var userAvatar: String = Session.get().pictureURL
     
     var body: some View {
         

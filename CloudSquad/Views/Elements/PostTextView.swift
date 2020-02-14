@@ -16,14 +16,19 @@ struct PostTextView: View {
         
         VStack (alignment: .center) {
             
+            AuthorView(post: post)
+                .frame(width: UIScreen.main.bounds.width - 40)
+            
             Text(post.text)
-                .fontWeight(Font.Weight.bold)
+                .fontWeight(.medium)
+                .font(.system(size: 16))
                 .foregroundColor(Color.black.opacity(0.6))
+                .padding(.horizontal)
             
             Spacer()
         }
-        .padding(EdgeInsets(top: 30, leading: 25, bottom: 30, trailing: 25))
-        .frame(width: UIScreen.main.bounds.width - 40, height: 400, alignment: .center)
+        .padding()
+        .frame(width: UIScreen.main.bounds.width - 40, height: 290, alignment: .center)
         .background(Color.white)
         .clipped()
         .cornerRadius(20)
