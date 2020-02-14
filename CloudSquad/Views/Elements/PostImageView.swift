@@ -10,17 +10,15 @@ import SwiftUI
 
 struct PostImageView: View {
     
-    var post: Post!
+    var post: Post = MockedData.post
     
     var body: some View {
 
         VStack {
 
             WebImage(imageURL: post.imageURL)
-            .frame(height: 200)
+            .frame(width: UIScreen.main.bounds.width - 40, height: 210)
             .clipped()
-            .cornerRadius(20)
-            .edgesIgnoringSafeArea(.all)
             
             Text(post.text)
             .font(.body)
@@ -39,5 +37,11 @@ struct PostImageView: View {
             SharedViewData.shared.post = self.post
             SharedViewData.shared.showPostsDetail = true
         }
+    }
+}
+
+struct PostImageView_Previews: PreviewProvider {
+    static var previews: some View {
+        PostImageView()
     }
 }

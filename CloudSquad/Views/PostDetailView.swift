@@ -18,10 +18,11 @@ struct PostDetailView: View {
             
             Color.white.edgesIgnoringSafeArea(.all)
             
-            LinearGradient(gradient: Gradient(colors: [Color.blue.opacity(0.05), Color.white]), startPoint: .top, endPoint: .bottom).edgesIgnoringSafeArea(.all)
+            LinearGradient(gradient: Gradient(colors: [Color.blue.opacity(0.05), Color.white]), startPoint: .top, endPoint: .bottom)
+                .edgesIgnoringSafeArea(.all)
             
             WebImage(imageURL: post.imageURL)
-            .frame(width: 200, height: 200, alignment: .center)
+                .frame(width: 200, height: 200, alignment: .center)
         }
     }
 }

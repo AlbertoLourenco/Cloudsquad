@@ -10,16 +10,16 @@ import Foundation
 
 struct Post: Codable {
     
-    var objectId: Int!
-    var text: String!
-    var imageURL: String!
-    var time: String!
+    var objectId: Int = 0
+    var text: String = ""
+    var imageURL: String = ""
+    var time: String = ""
     
-    var amountLikes: Int!
-    var amountComments: Int!
+    var amountLikes: Int = 0
+    var amountComments: Int = 0
     
-    var author: User!
-    var comments: Array<Comment>!
+    var author: User = MockedData.user
+    var comments: Array<Comment> = [MockedData.comment]
     
     enum CodingKeys: String, CodingKey {
         

@@ -13,7 +13,7 @@ struct User: Codable {
     var objectId: Int = 0
     var name: String = ""
     var twitter: String = ""
-    var pictureURL: String?
+    var pictureURL: String? = ""
     var email: String? = ""
     
     enum CodingKeys: String, CodingKey {

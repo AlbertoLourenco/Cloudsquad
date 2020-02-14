@@ -30,6 +30,7 @@
 		16AE78BC23F636F60067AEA3 /* PostImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AE78BB23F636F60067AEA3 /* PostImageView.swift */; };
 		16AE78BE23F637460067AEA3 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AE78BD23F637460067AEA3 /* RequestManager.swift */; };
 		16BD841023F63A7500A58785 /* WebImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BD840F23F63A7500A58785 /* WebImage.swift */; };
+		16E5C74123F7148E009766E8 /* MockedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E5C74023F7148E009766E8 /* MockedData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		16AE78BB23F636F60067AEA3 /* PostImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostImageView.swift; sourceTree = "<group>"; };
 		16AE78BD23F637460067AEA3 /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
 		16BD840F23F63A7500A58785 /* WebImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebImage.swift; sourceTree = "<group>"; };
+		16E5C74023F7148E009766E8 /* MockedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +171,7 @@
 			children = (
 				16580D1223F5DEFE00D10983 /* Session.swift */,
 				16BD840F23F63A7500A58785 /* WebImage.swift */,
+				16E5C74023F7148E009766E8 /* MockedData.swift */,
 				16AE78AE23F60DEB0067AEA3 /* SharedViewData.swift */,
 				16AE78BD23F637460067AEA3 /* RequestManager.swift */,
 				162A8E0223F4D5F900168CE9 /* URLMockSession.swift */,
@@ -364,6 +367,7 @@
 				16580D1323F5DEFE00D10983 /* Session.swift in Sources */,
 				16AE78B423F617BB0067AEA3 /* CloseButton.swift in Sources */,
 				16AE78BA23F636E90067AEA3 /* PostTextView.swift in Sources */,
+				16E5C74123F7148E009766E8 /* MockedData.swift in Sources */,
 				1628F55023F078150049D24C /* LoginView.swift in Sources */,
 				1628F54B23F078150049D24C /* SceneDelegate.swift in Sources */,
 				16AE78AF23F60DEB0067AEA3 /* SharedViewData.swift in Sources */,

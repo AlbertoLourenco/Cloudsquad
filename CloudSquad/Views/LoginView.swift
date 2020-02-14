@@ -23,22 +23,22 @@ struct LoginView: View {
             VStack (alignment: .center) {
                 
                 Text("Make login with\nyour e-mail and password\nthat you've used in register.")
-                .fontWeight(Font.Weight.bold)
-                .foregroundColor(Color.black.opacity(0.6))
+                    .fontWeight(Font.Weight.bold)
+                    .foregroundColor(Color.black.opacity(0.6))
                 
                 Spacer()
                 
                 TextField("E-mail", text: $email)
-                .padding()
-                .background(Color.secondary.opacity(0.1))
-                .foregroundColor(Color.black.opacity(0.6))
-                .clipShape(RoundedRectangle(cornerRadius: 20))
+                    .padding()
+                    .background(Color.secondary.opacity(0.1))
+                    .foregroundColor(Color.black.opacity(0.6))
+                    .clipShape(RoundedRectangle(cornerRadius: 20))
                 
                 SecureField("Password", text: $password)
-                .padding()
-                .background(Color.secondary.opacity(0.1))
-                .foregroundColor(Color.black.opacity(0.6))
-                .clipShape(RoundedRectangle(cornerRadius: 20))
+                    .padding()
+                    .background(Color.secondary.opacity(0.1))
+                    .foregroundColor(Color.black.opacity(0.6))
+                    .clipShape(RoundedRectangle(cornerRadius: 20))
                 
                 Spacer()
                 

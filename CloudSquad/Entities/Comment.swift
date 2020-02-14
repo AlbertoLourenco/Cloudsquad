@@ -14,7 +14,7 @@ struct Comment: Codable {
     var text: String!
     var time: String!
     
-    var author: User!
+    var author: User = MockedData.user
     
     enum CodingKeys: String, CodingKey {
         

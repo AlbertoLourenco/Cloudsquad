@@ -16,8 +16,8 @@ struct WebImage: View {
         
         VStack {
             Image(uiImage: (imageLoader.data.count == 0) ? UIImage(named: "Placeholder")! : UIImage(data: imageLoader.data)!)
-            .resizable()
-            .scaledToFill()
+                .resizable()
+                .scaledToFill()
         }
     }
     

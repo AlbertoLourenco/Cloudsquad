@@ -17,10 +17,10 @@ struct CloseButton: View {
                 Spacer()
 
                 Image(systemName: "xmark")
-                .frame(width: 36, height: 36)
-                .foregroundColor(.white)
-                .background(Color.black)
-                .clipShape(Circle())
+                    .frame(width: 36, height: 36)
+                    .foregroundColor(.white)
+                    .background(Color.black)
+                    .clipShape(Circle())
             }
             Spacer()
         }

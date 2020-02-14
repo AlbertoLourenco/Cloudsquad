@@ -20,31 +20,33 @@ struct PostsView: View {
         ZStack {
             
             Color.white.edgesIgnoringSafeArea(.all)
-            LinearGradient(gradient: Gradient(colors: [Color.gray.opacity(0.05), Color.white]),
-                           startPoint: .top,
-                           endPoint: .bottom).edgesIgnoringSafeArea(.all)
             
-            ScrollView {
+            LinearGradient(gradient: Gradient(colors: [Color.gray.opacity(0.05), Color.white]), startPoint: .top, endPoint: .bottom)
+                .edgesIgnoringSafeArea(.all)
+            
+            VStack {
                 
-                VStack {
+                HStack {
                     
-                    HStack {
-                        
-                        Text("Welcome, \(userName)")
-                        .font(.title)
-                        
-                        Spacer()
-                        
-                        WebImage(imageURL: userAvatar)
+                    Text("Welcome, \(userName)")
+                        .fontWeight(.bold)
+                        .font(.system(size: 24))
+                    
+                    Spacer()
+                    
+                    WebImage(imageURL: userAvatar)
                         .frame(width: 44, height: 44)
                         .clipShape(Circle())
                         .onTapGesture {
                             Session.logout()
                         }
-                    }
-                    .padding()
-                    
-                    VStack {
+                }
+                .padding(.horizontal)
+                .padding(.top, 64)
+                
+                ScrollView (.vertical, showsIndicators: false) {
+
+                    VStack (spacing: 30) {
                         
                         ForEach(posts) { item in
 
@@ -55,7 +57,11 @@ struct PostsView: View {
                             }
                         }
                     }
+                    .padding(EdgeInsets(top: 20, leading: 30, bottom: 30, trailing: 30))
+                    .frame(width: UIScreen.main.bounds.width)
                 }
+                
+                Spacer()
             }
         }
         .onAppear() {
@@ -64,6 +70,7 @@ struct PostsView: View {
                 self.posts = response
             }
         }
+        .edgesIgnoringSafeArea(.all)
     }
 }
 

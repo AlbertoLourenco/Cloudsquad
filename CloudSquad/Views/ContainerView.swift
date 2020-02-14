@@ -46,9 +46,9 @@ struct ContainerView: View {
                     PostDetailView(post: self.viewStates.post!)
 
                     CloseButton()
-                    .onTapGesture {
-                        self.viewStates.showPostsDetail = false
-                    }
+                        .onTapGesture {
+                            self.viewStates.showPostsDetail = false
+                        }
                 }
             }
         }
