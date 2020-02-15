@@ -42,26 +42,38 @@ struct PostAddView: View {
                 
                 HStack {
 
-                    HStack {
-                        
-                        Image(systemName: "camera")
-                            .frame(width: 50, height: 50, alignment: .center)
-                            .background(Color.white)
-                            .foregroundColor(Color(UIColor(red:0.23, green:0.20, blue:0.61, alpha:1.0)))
-                            .clipShape(Circle())
-                            .shadow(color: Color.gray.opacity(0.4), radius: 20, x: 0, y: 0)
-                            .padding(.leading, 0)
+                    ZStack (alignment: postImage == nil ? .leading : .trailing) {
                         
                         Text("Add an image?")
-                            .foregroundColor(Color.gray.opacity(0.6))
-                            .padding(.trailing, 15)
+                            .opacity(postImage == nil ? 1 : 0)
+                            .frame(width: 170, alignment: postImage == nil ? .trailing : .leading)
+                            .padding(10)
+                            .foregroundColor(postImage == nil ? Color.gray.opacity(0.6) : Color.clear)
+                        
+                        postImage?
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 190, height: 60)
+                        
+                        Image(systemName: postImage == nil ? "camera" : "xmark")
+                            .frame(width: 60, height: 60)
+                            .background(Color.white)
+                            .foregroundColor(postImage == nil ? Color(UIColor(red:0.23, green:0.20, blue:0.61, alpha:1.0)) : Color.red)
+                            .clipShape(Circle())
+                            .shadow(color: Color.gray.opacity(0.4), radius: 20, x: 0, y: 0)
                     }
+                    .frame(width: 190, height: 60, alignment: .leading)
                     .background(Color.white)
                     .clipShape(RoundedRectangle(cornerRadius: 30))
                     .shadow(color: Color.gray.opacity(0.4), radius: 20, x: 0, y: 0)
-                    .frame(width: 190, height: 60)
+                    .animation(.spring())
                     .onTapGesture {
-                        self.showImagePicker = true
+                        
+                        if self.postImage == nil {
+                            self.showImagePicker = true
+                        }else{
+                            self.postImage = nil
+                        }
                     }
                     
                     Spacer()
@@ -70,7 +82,7 @@ struct PostAddView: View {
                         self.addPost()
                     }
                     .frame(width: 80)
-                    .padding(15)
+                    .padding(20)
                     .background(LinearGradient(gradient: Gradient(colors: [Color.blue, Color.purple]), startPoint: .bottom, endPoint: .trailing))
                     .foregroundColor(Color.white)
                     .font(.headline)
@@ -84,7 +96,7 @@ struct PostAddView: View {
             }
         }
         .sheet(isPresented: $showImagePicker) {
-            ImagePicker(image: self.$postImage, data: self.$postImageData)
+            ImagePicker(image: self.$postImage)
         }
         .onDisappear() {
             SharedViewData.shared.showPostsAdd = false
