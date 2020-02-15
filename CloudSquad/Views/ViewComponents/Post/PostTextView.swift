@@ -16,8 +16,8 @@ struct PostTextView: View {
         
         VStack (alignment: .center) {
             
-            AuthorView(post: post)
-                .frame(width: UIScreen.main.bounds.width - 40)
+            AuthorPostView(post: post)
+                .frame(width: Constants.screenWidth)
             
             Text(post.text)
                 .fontWeight(.medium)
@@ -28,10 +28,10 @@ struct PostTextView: View {
             Spacer()
             
             SocialStatsView(post: post)
-                .frame(width: UIScreen.main.bounds.width - 40, height: 40)
+                .frame(width: Constants.screenWidth, height: 40)
         }
         .padding()
-        .frame(width: UIScreen.main.bounds.width - 40, height: 290, alignment: .center)
+        .frame(width: Constants.screenWidth, height: 290, alignment: .center)
         .background(Color.white)
         .clipped()
         .cornerRadius(20)

@@ -38,7 +38,7 @@ struct ButtonAdd: View {
                 SharedViewData.shared.showPostsAdd = true
             }
         }
-        .frame(width: Constants.screenSize.width - 40, alignment: .trailing)
+        .frame(width: Constants.screenWidth, alignment: .trailing)
         .padding(EdgeInsets(top: 0, leading: 0, bottom: 30, trailing: 30))
     }
 }

@@ -10,6 +10,6 @@ import SwiftUI
 
 struct Constants {
     
-    static var screenSize = UIScreen.main.bounds
+    static var screenWidth = UIScreen.main.bounds.width - 40
     
 }

@@ -1,5 +1,5 @@
 //
-//  AuthorView.swift
+//  AuthorPostView.swift
 //  CloudSquad
 //
 //  Created by Alberto Lourenço on 2/14/20.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct AuthorView: View {
+struct AuthorPostView: View {
     
     var post: Post = MockedData.post
     
@@ -44,8 +44,8 @@ struct AuthorView: View {
     }
 }
 
-struct AuthorView_Previews: PreviewProvider {
+struct AuthorPostView_Previews: PreviewProvider {
     static var previews: some View {
-        AuthorView()
+        AuthorPostView()
     }
 }

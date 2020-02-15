@@ -53,10 +53,10 @@ struct RequestManager {
     
     func loadPost(id: Int, completion: @escaping (_ response: Post?) -> Void) {
         
-        let params = ["post_id": id]
+        let params = ["&post_id": id]
         
         manager.request(method: .get,
-                        endpoint: "posts",
+                        endpoint: "postDetail",
                         parameters: params,
                         responseType: Post.self) { (response, code) in
 

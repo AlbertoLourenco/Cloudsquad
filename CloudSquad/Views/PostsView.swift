@@ -91,7 +91,7 @@ struct PostsView: View {
                 }
             
             MenuView()
-                .offset(y: showMenu ? 0 : Constants.screenSize.height)
+                .offset(y: showMenu ? 0 : UIScreen.main.bounds.height)
                 .offset(y: dragState.height)
                 .animation(.spring(response: 0.5, dampingFraction: 0.6, blendDuration: 0))
                 .onTapGesture {

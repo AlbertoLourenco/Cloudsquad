@@ -20,7 +20,7 @@ struct PostImageView: View {
                 .frame(width: UIScreen.main.bounds.width - 40, height: 210)
                 .clipped()
             
-            AuthorView(post: post)
+            AuthorPostView(post: post)
                 .frame(width: UIScreen.main.bounds.width - 40)
             
             Text(post.text)
@@ -46,7 +46,7 @@ struct PostImageView: View {
             SharedViewData.shared.post = self.post
             SharedViewData.shared.showPostsDetail = true
         }
-        .frame(width: Constants.screenSize.width - 40, height: 520)
+        .frame(width: Constants.screenWidth, height: 520)
     }
 }
 

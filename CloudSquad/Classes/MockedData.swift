@@ -38,7 +38,7 @@ struct MockedData {
                         amountLikes: 8,
                         amountComments: 2,
                         author: MockedData.user,
-                        comments: [MockedData.comment])
+                        comments: [MockedData.comment, MockedData.comment, MockedData.comment])
         }
     }
 }
