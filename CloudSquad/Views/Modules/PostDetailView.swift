@@ -158,7 +158,16 @@ struct PostDetailView: View {
     
     private func addComment() {
         
-        
+        RequestManager.shared.addComment(text: commentText, post: post) { (result) in
+            
+            self.commentText = ""
+            
+            self.loadData()
+            
+            self.showingKeyboard = false
+            
+            UIApplication.shared.endEditing()
+        }
     }
 }
 

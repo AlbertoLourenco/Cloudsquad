@@ -84,7 +84,7 @@ struct RequestManager {
     
     func addPost(text: String, fileData: Data?, completion: @escaping (_ result: Bool) -> Void) {
         
-        let params: Dictionary<String, Any> = ["id_user":Session.get().id,
+        let params: Dictionary<String, Any> = ["id_user": Session.get().id,
                                                "text": text]
         
         let dateFormatter = DateFormatter()
@@ -107,6 +107,22 @@ struct RequestManager {
                         files: files,
                         responseType: APIResult.self) { (response, code) in
 
+                            completion(code == 200)
+        }
+    }
+    
+    func addComment(text: String, post: Post, completion: @escaping (_ result: Bool) -> Void) {
+        
+        let params: Dictionary<String, Any> = ["id_user": Session.get().id,
+                                               "id_post": post.id,
+                                               "text": text]
+        
+        manager.request(method: .post,
+                        type: .formData,
+                        endpoint: "commentAdd",
+                        parameters: params,
+                        responseType: APIResult.self) { (response, code) in
+                            
                             completion(code == 200)
         }
     }
