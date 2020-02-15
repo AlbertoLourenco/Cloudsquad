@@ -37,6 +37,7 @@
 		16F220A323F758E600AEC25A /* SheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F220A223F758E600AEC25A /* SheetView.swift */; };
 		16F220A523F75C9500AEC25A /* PostAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F220A423F75C9500AEC25A /* PostAddView.swift */; };
 		16F220A723F75D4700AEC25A /* ButtonAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F220A623F75D4700AEC25A /* ButtonAdd.swift */; };
+		16F220A923F76CA100AEC25A /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F220A823F76CA100AEC25A /* MenuView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 		16F220A223F758E600AEC25A /* SheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetView.swift; sourceTree = "<group>"; };
 		16F220A423F75C9500AEC25A /* PostAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PostAddView.swift; path = CloudSquad/Views/PostAddView.swift; sourceTree = SOURCE_ROOT; };
 		16F220A623F75D4700AEC25A /* ButtonAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonAdd.swift; sourceTree = "<group>"; };
+		16F220A823F76CA100AEC25A /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +210,7 @@
 				16AE78B223F617AA0067AEA3 /* Elements */,
 				16F220A223F758E600AEC25A /* SheetView.swift */,
 				16AE78B023F6117A0067AEA3 /* ContainerView.swift */,
+				16F220A823F76CA100AEC25A /* MenuView.swift */,
 				1628F54F23F078150049D24C /* LoginView.swift */,
 				16580D0E23F5DBB600D10983 /* PostsView.swift */,
 				16F220A423F75C9500AEC25A /* PostAddView.swift */,
@@ -380,6 +383,7 @@
 				16580D0F23F5DBB600D10983 /* PostsView.swift in Sources */,
 				16E5C74523F729E9009766E8 /* SocialStatsView.swift in Sources */,
 				16F220A523F75C9500AEC25A /* PostAddView.swift in Sources */,
+				16F220A923F76CA100AEC25A /* MenuView.swift in Sources */,
 				1628F54923F078150049D24C /* AppDelegate.swift in Sources */,
 				16E5C74323F71D2C009766E8 /* AuthorView.swift in Sources */,
 				16AE78B823F6200F0067AEA3 /* Comment.swift in Sources */,
