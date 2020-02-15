@@ -10,9 +10,12 @@ import SwiftUI
 
 struct PostDetailView: View {
     
-    @ObservedObject var sharedData = SharedViewData.shared
+    @ObservedObject private var sharedData = SharedViewData.shared
     
     @State var post: Post = MockedData.post
+    @State private var commentText: String = ""
+    @State private var showingKeyboard: Bool = false
+    @State private var keyboardHeight: CGFloat = 0
     
     var body: some View {
         
@@ -80,9 +83,62 @@ struct PostDetailView: View {
             LightboxView(imageURL: SharedViewData.shared.post.imageURL)
                 .opacity(self.sharedData.showLightbox ? 1 : 0)
                 .animation(.linear)
+            
+            ZStack {
+
+                VStack {
+                    
+                    HStack {
+                        
+                        TextField("Leave a comment", text: $commentText)
+                            .frame(height: 20)
+                            .padding(15)
+                            .background(Color.white)
+                            .clipShape(RoundedRectangle(cornerRadius: 30))
+                        
+                        Button(action: {
+                            self.addComment()
+                        }) {
+                            Image(systemName: "paperplane.fill")
+                                .resizable()
+                                .renderingMode(Image.TemplateRenderingMode.template)
+                                .frame(width: 28, height: 28)
+                                .foregroundColor(Color(UIColor(red:0.23, green:0.20, blue:0.61, alpha:1.0)))
+                        }
+                        .frame(width: 50, height: 50)
+                    }
+                    .padding(12)
+                    .padding(.leading, 5)
+                    .frame(width: Constants.screenWidth)
+                    .background(VisualEffectView(effect: UIBlurEffect(style: .light)).background(Color(UIColor(red:0.23, green:0.20, blue:0.61, alpha:1.0)).opacity(0.1)))
+                    .clipShape(RoundedRectangle(cornerRadius: 40))
+                    .clipped()
+                    .shadow(color: Color.gray.opacity(0.6), radius: 20, x: 0, y: 0)
+                }
+                .offset(y: showingKeyboard ? -(keyboardHeight - 20) : (UIScreen.main.bounds.height/2) - 100)
+                .animation(.spring(response: 0.4, dampingFraction: 0.6, blendDuration: 0))
+            }
         }
         .edgesIgnoringSafeArea(.all)
+        .onTapGesture {
+            self.showingKeyboard = false
+            
+            UIApplication.shared.endEditing()
+        }
         .onAppear() {
+            
+            NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification,
+                                                   object: nil,
+                                                   queue: .main) { (notification) in
+                self.showingKeyboard = true
+            }
+            
+            NotificationCenter.default.addObserver(forName: UIResponder.keyboardDidHideNotification,
+                                                   object: nil,
+                                                   queue: .main) { (notification) in
+                self.showingKeyboard = false
+            }
+            
             self.loadData()
         }
         .onDisappear() {
@@ -98,6 +154,11 @@ struct PostDetailView: View {
                 self.post = object
             }
         }
+    }
+    
+    private func addComment() {
+        
+        
     }
 }
 
