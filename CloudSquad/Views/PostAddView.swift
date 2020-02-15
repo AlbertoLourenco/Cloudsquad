@@ -12,7 +12,8 @@ import UIKit
 struct PostAddView: View {
     
     @State var postText: String = ""
-    @State var postImage: UIImage? = nil
+    @State var postImage: Image?
+    @State var postImageData: Data?
     
     @State var showImagePicker: Bool = false
     
@@ -38,36 +39,60 @@ struct PostAddView: View {
                 }
                 .frame(minHeight: 100)
                 .background(Color.white)
-
+                
                 HStack {
+
+                    HStack {
+                        
+                        Image(systemName: "camera")
+                            .frame(width: 50, height: 50, alignment: .center)
+                            .background(Color.white)
+                            .foregroundColor(Color(UIColor(red:0.23, green:0.20, blue:0.61, alpha:1.0)))
+                            .clipShape(Circle())
+                            .shadow(color: Color.gray.opacity(0.4), radius: 20, x: 0, y: 0)
+                            .padding(.leading, 0)
+                        
+                        Text("Add an image?")
+                            .foregroundColor(Color.gray.opacity(0.6))
+                            .padding(.trailing, 15)
+                    }
+                    .background(Color.white)
+                    .clipShape(RoundedRectangle(cornerRadius: 30))
+                    .shadow(color: Color.gray.opacity(0.4), radius: 20, x: 0, y: 0)
+                    .frame(width: 190, height: 60)
+                    .onTapGesture {
+                        self.showImagePicker = true
+                    }
                     
-                    Image(systemName: "camera")
-                        .frame(width: 50, height: 50, alignment: .center)
-                        .background(Color.white)
-                        .foregroundColor(Color(UIColor(red:0.23, green:0.20, blue:0.61, alpha:1.0)))
-                        .clipShape(Circle())
-                        .shadow(color: Color.gray.opacity(0.4), radius: 20, x: 0, y: 0)
-                        .padding(.leading, 0)
+                    Spacer()
                     
-                    Text("Add an image?")
-                        .foregroundColor(Color.gray.opacity(0.6))
-                        .padding(.trailing, 15)
+                    Button("Post it!") {
+                        self.addPost()
+                    }
+                    .frame(width: 80)
+                    .padding(15)
+                    .background(LinearGradient(gradient: Gradient(colors: [Color.blue, Color.purple]), startPoint: .bottom, endPoint: .trailing))
+                    .foregroundColor(Color.white)
+                    .font(.headline)
+                    .clipShape(RoundedRectangle(cornerRadius: 30))
+                    .shadow(color: Color.gray.opacity(0.4), radius: 20, x: 0, y: 0)
                 }
-                .background(Color.white)
-                .clipShape(RoundedRectangle(cornerRadius: 30))
-                .shadow(color: Color.gray.opacity(0.4), radius: 20, x: 0, y: 0)
-                .frame(width: Constants.screenWidth, height: 60, alignment: .leading)
-                .onTapGesture {
-                    self.showImagePicker = true
-                }
+                .padding(.top, 20)
+                .frame(width: Constants.screenWidth, height: 60)
                 
                 Spacer()
             }
-            
+        }
+        .sheet(isPresented: $showImagePicker) {
+            ImagePicker(image: self.$postImage, data: self.$postImageData)
         }
         .onDisappear() {
             SharedViewData.shared.showPostsAdd = false
         }
+    }
+    
+    func addPost() {
+        
     }
 }
 

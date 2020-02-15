@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1606AF1923F8222800A23884 /* MultilineTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1606AF1823F8222800A23884 /* MultilineTextView.swift */; };
+		1606AF1B23F82CDC00A23884 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1606AF1A23F82CDC00A23884 /* ImagePicker.swift */; };
 		1628F54923F078150049D24C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1628F54823F078150049D24C /* AppDelegate.swift */; };
 		1628F54B23F078150049D24C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1628F54A23F078150049D24C /* SceneDelegate.swift */; };
 		1628F54E23F078150049D24C /* CloudSquad.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1628F54C23F078150049D24C /* CloudSquad.xcdatamodeld */; };
@@ -62,6 +63,7 @@
 
 /* Begin PBXFileReference section */
 		1606AF1823F8222800A23884 /* MultilineTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultilineTextView.swift; sourceTree = "<group>"; };
+		1606AF1A23F82CDC00A23884 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		1628F54523F078150049D24C /* CloudSquad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CloudSquad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1628F54823F078150049D24C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1628F54A23F078150049D24C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -245,6 +247,7 @@
 				16F220A623F75D4700AEC25A /* ButtonAdd.swift */,
 				16AE78B323F617BB0067AEA3 /* ButtonClose.swift */,
 				1606AF1823F8222800A23884 /* MultilineTextView.swift */,
+				1606AF1A23F82CDC00A23884 /* ImagePicker.swift */,
 			);
 			path = UIElements;
 			sourceTree = "<group>";
@@ -436,6 +439,7 @@
 				1628F54B23F078150049D24C /* SceneDelegate.swift in Sources */,
 				16AE78AF23F60DEB0067AEA3 /* SharedViewData.swift in Sources */,
 				16AE78BC23F636F60067AEA3 /* PostImageView.swift in Sources */,
+				1606AF1B23F82CDC00A23884 /* ImagePicker.swift in Sources */,
 				16AE78B123F6117A0067AEA3 /* ContainerView.swift in Sources */,
 				162A8E0323F4D5F900168CE9 /* URLMockSession.swift in Sources */,
 			);
