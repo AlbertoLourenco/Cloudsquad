@@ -12,6 +12,7 @@ struct PostsView: View {
     
     @State var showMenu = false
     @State var dragState = CGSize.zero
+    @State var isLoading: Bool = false
     
     @State var posts: Array<Post> = []
     
@@ -82,7 +83,12 @@ struct PostsView: View {
             .animation(.spring(response: 0.5, dampingFraction: 0.6, blendDuration: 0))
 
             ButtonAdd()
-
+            
+            if isLoading {
+                
+                LoadingView(lottieFile: "loading")
+            }
+            
             Color.black.opacity(showMenu ? 0.5 : 0)
                 .animation(.linear)
                 .edgesIgnoringSafeArea(.all)
@@ -130,8 +136,17 @@ struct PostsView: View {
     }
     
     func loadData() {
-
+        
+        withAnimation {
+            self.isLoading = true
+        }
+        
         RequestManager.shared.loadPosts { (response) in
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                self.isLoading = false
+            }
+            
             self.posts = response
         }
     }

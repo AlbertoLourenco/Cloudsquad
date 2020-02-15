@@ -15,6 +15,7 @@ struct PostAddView: View {
     @State var postImage: Image?
     @State var postImageData: Data?
     
+    @State var isLoading: Bool = false
     @State var showImagePicker: Bool = false
     
     var body: some View {
@@ -81,7 +82,7 @@ struct PostAddView: View {
                     Button(action: {
                         self.addPost()
                     }) {
-                        Text("asdgs")
+                        Text("Post it!")
                             .frame(width: 80)
                             .padding(20)
                             .background(LinearGradient(gradient: Gradient(colors: [Color.blue, Color.purple]), startPoint: .bottom, endPoint: .trailing))
@@ -96,21 +97,35 @@ struct PostAddView: View {
                 
                 Spacer()
             }
+
+            if isLoading {
+                
+                LoadingView(lottieFile: "waiting")
+            }
         }
         .sheet(isPresented: $showImagePicker) {
             ImagePicker(image: self.$postImage, data: self.$postImageData)
         }
         .onDisappear() {
+
             SharedViewData.shared.showPostsAdd = false
         }
     }
     
     func addPost() {
+
+        UIApplication.shared.endEditing()
+        
+        withAnimation {
+            self.isLoading = true
+        }
         
         RequestManager.shared.addPost(text: postText, fileData: postImageData) { (result) in
-            
+
+            self.isLoading = false
+
             SharedViewData.shared.showPostsAdd = false
-            
+
             NotificationCenter.default.post(name: NSNotification.Name("LoadPosts"), object: nil)
         }
     }
