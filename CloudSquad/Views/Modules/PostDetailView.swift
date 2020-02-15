@@ -69,7 +69,7 @@ struct PostDetailView: View {
             VStack {
 
                 ButtonClose()
-                    .offset(x: -4, y: 20)
+                    .offset(x: -4, y: 64)
                     .onTapGesture {
                         SharedViewData.shared.showPostsDetail = false
                     }

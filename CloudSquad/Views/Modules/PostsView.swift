@@ -99,7 +99,7 @@ struct PostsView: View {
             MenuView()
                 .offset(y: showMenu ? 0 : UIScreen.main.bounds.height)
                 .offset(y: dragState.height)
-                .animation(.spring(response: 0.5, dampingFraction: 0.6, blendDuration: 0))
+                .animation(showMenu ? .spring(response: 0.5, dampingFraction: 0.6, blendDuration: 0) : .none)
                 .onTapGesture {
                     self.showMenu.toggle()
                 }
