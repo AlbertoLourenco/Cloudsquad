@@ -58,10 +58,16 @@ struct PostDetailView: View {
                 }
             }
             
-            ButtonClose()
-                .onTapGesture {
-                    SharedViewData.shared.showPostsDetail = false
-                }
+            VStack {
+
+                ButtonClose()
+                    .offset(x: -4, y: 20)
+                    .onTapGesture {
+                        SharedViewData.shared.showPostsDetail = false
+                    }
+                
+                Spacer()
+            }
         }
         .edgesIgnoringSafeArea(.all)
         .onAppear() {

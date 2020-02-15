@@ -22,9 +22,8 @@ struct ButtonClose: View {
                     .background(Color.black)
                     .clipShape(Circle())
             }
-            Spacer()
         }
-        .offset(x: -16, y: 20)
+        .offset(x: -16)
         .transition(.move(edge: .top))
         .animation(.spring(response: 0.6, dampingFraction: 0.8, blendDuration: 0))
     }
