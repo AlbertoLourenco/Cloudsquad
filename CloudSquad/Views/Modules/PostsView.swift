@@ -84,10 +84,8 @@ struct PostsView: View {
 
             ButtonAdd()
             
-            if isLoading {
-                
-                LoadingView(lottieFile: "loading")
-            }
+            LoadingView(lottieFile: "loading")
+                .opacity(isLoading ? 1 : 0)
             
             Color.black.opacity(showMenu ? 0.5 : 0)
                 .animation(.linear)

@@ -100,10 +100,8 @@ struct PostAddView: View {
                 Spacer()
             }
 
-            if isLoading {
-                
-                LoadingView(lottieFile: "waiting")
-            }
+            LoadingView(lottieFile: "waiting")
+                .opacity(isLoading ? 1 : 0)
         }
         .sheet(isPresented: $showImagePicker) {
             ImagePicker(image: self.$postImage, data: self.$postImageData)
