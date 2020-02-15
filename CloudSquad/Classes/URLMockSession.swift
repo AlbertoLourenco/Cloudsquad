@@ -97,6 +97,7 @@ struct UploadFile {
     var data: Data
     var name: String
     var type: String
+    var fieldName: String
 }
 
 //-----------------------------------------------------------------------
@@ -256,6 +257,7 @@ class URLMockSession {
                 }catch{
                     print("-> Entity: " + String(describing: T.self))
                     print("-> Error: " + String(describing: error))
+                    DispatchQueue.main.async { completion(nil, responseCode) }
                 }
             }else{
                 DispatchQueue.main.async { completion(nil, responseCode) }
@@ -296,12 +298,17 @@ class URLMockSession {
             body.appendString("--".appending(boundary.appending("--")))
         }
         
+        var brackets = ""
+        if files.count > 1 {
+            brackets = "[]"
+        }
+        
         for file in files {
 
             let filename = "\(file.name).\(file.type)"
             
             body.appendString(boundaryPrefix)
-            body.appendString("Content-Disposition: form-data; name=\"file\"; filename=\"\(filename)\"\r\n")
+            body.appendString("Content-Disposition: form-data; name=\"\(file.fieldName)\(brackets)\"; filename=\"\(filename)\"\r\n")
             body.appendString("Content-Type: image/\(file.type)\r\n\r\n")
             body.append(file.data)
             body.appendString("\r\n")
@@ -334,6 +341,7 @@ class URLMockSession {
                                 }catch{
                                     print("-> Entity: " + String(describing: T.self))
                                     print("-> Error: " + String(describing: error))
+                                    DispatchQueue.main.async { completion(nil, responseCode) }
                                 }
                             }else{
                                 DispatchQueue.main.async { completion(nil, responseCode) }

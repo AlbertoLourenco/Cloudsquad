@@ -78,16 +78,18 @@ struct PostAddView: View {
                     
                     Spacer()
                     
-                    Button("Post it!") {
+                    Button(action: {
                         self.addPost()
+                    }) {
+                        Text("asdgs")
+                            .frame(width: 80)
+                            .padding(20)
+                            .background(LinearGradient(gradient: Gradient(colors: [Color.blue, Color.purple]), startPoint: .bottom, endPoint: .trailing))
+                            .foregroundColor(Color.white)
+                            .font(.headline)
+                            .clipShape(RoundedRectangle(cornerRadius: 30))
+                            .shadow(color: Color.gray.opacity(0.4), radius: 20, x: 0, y: 0)
                     }
-                    .frame(width: 80)
-                    .padding(20)
-                    .background(LinearGradient(gradient: Gradient(colors: [Color.blue, Color.purple]), startPoint: .bottom, endPoint: .trailing))
-                    .foregroundColor(Color.white)
-                    .font(.headline)
-                    .clipShape(RoundedRectangle(cornerRadius: 30))
-                    .shadow(color: Color.gray.opacity(0.4), radius: 20, x: 0, y: 0)
                 }
                 .padding(.top, 20)
                 .frame(width: Constants.screenWidth, height: 60)
@@ -96,7 +98,7 @@ struct PostAddView: View {
             }
         }
         .sheet(isPresented: $showImagePicker) {
-            ImagePicker(image: self.$postImage)
+            ImagePicker(image: self.$postImage, data: self.$postImageData)
         }
         .onDisappear() {
             SharedViewData.shared.showPostsAdd = false
@@ -105,6 +107,12 @@ struct PostAddView: View {
     
     func addPost() {
         
+        RequestManager.shared.addPost(text: postText, fileData: postImageData) { (result) in
+            
+            SharedViewData.shared.showPostsAdd = false
+            
+            NotificationCenter.default.post(name: NSNotification.Name("LoadPosts"), object: nil)
+        }
     }
 }
 

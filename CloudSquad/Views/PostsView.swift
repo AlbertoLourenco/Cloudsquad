@@ -118,11 +118,22 @@ struct PostsView: View {
         }
         .onAppear() {
             
-            RequestManager.shared.loadPosts { (response) in
-                self.posts = response
+            self.loadData()
+            
+            NotificationCenter.default.addObserver(forName: NSNotification.Name("LoadPosts"),
+                                                   object: nil,
+                                                   queue: .main) { (notification) in
+                self.loadData()
             }
         }
         .edgesIgnoringSafeArea(.all)
+    }
+    
+    func loadData() {
+
+        RequestManager.shared.loadPosts { (response) in
+            self.posts = response
+        }
     }
 }
 

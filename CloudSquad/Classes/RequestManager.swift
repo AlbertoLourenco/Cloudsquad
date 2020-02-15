@@ -81,4 +81,33 @@ struct RequestManager {
                             }
         }
     }
+    
+    func addPost(text: String, fileData: Data?, completion: @escaping (_ result: Bool) -> Void) {
+        
+        let params: Dictionary<String, Any> = ["id_user":Session.get().id,
+                                               "text": text]
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyyMMddHHmmss"
+        
+        var files: Array<UploadFile> = []
+        
+        if let data = fileData {
+            
+            files.append(UploadFile(data: data,
+                                    name: dateFormatter.string(from: Date()),
+                                    type: "jpg",
+                                    fieldName: "imageFile"))
+        }
+        
+        manager.request(method: .post,
+                        type: .formData,
+                        endpoint: "postAdd",
+                        parameters: params,
+                        files: files,
+                        responseType: APIResult.self) { (response, code) in
+
+                            completion(code == 200)
+        }
+    }
 }
