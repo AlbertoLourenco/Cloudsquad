@@ -32,7 +32,8 @@ struct MockedData {
     static var post: Post {
         get {
             return Post(objectId: 1,
-                        text: "Mussum Ipsum, cacilds vidis litro abertis. Atirei o pau no gatis, per gatis num morreus. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis. Todo mundo vê os porris que eu tomo, mas ninguém vê os tombis que eu levo! Aenean aliquam molestie leo, vitae iaculis nisl.",
+                        text: "Todo mundo vê os porris que eu tomo, mas ninguém vê os tombis que eu levo! Aenean aliquam molestie leo, vitae iaculis nisl.",
+//                        text: "Mussum Ipsum, cacilds vidis litro abertis. Atirei o pau no gatis, per gatis num morreus. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis. Todo mundo vê os porris que eu tomo, mas ninguém vê os tombis que eu levo! Aenean aliquam molestie leo, vitae iaculis nisl.",
                         imageURL: "https://mussumipsum.com/assets/img/bg_home.jpg",
 //                        imageURL: "",
                         time: "4h ago",

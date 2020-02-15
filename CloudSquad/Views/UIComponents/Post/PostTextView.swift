@@ -24,14 +24,13 @@ struct PostTextView: View {
                 .font(.system(size: 16))
                 .foregroundColor(Color.black.opacity(0.6))
                 .padding(.horizontal)
-            
-            Spacer()
+                .frame(width: Constants.screenWidth, alignment: .leading)
             
             SocialStatsView(post: post)
-                .frame(width: Constants.screenWidth, height: 40)
+                .frame(width: Constants.screenWidth, height: 60)
         }
         .padding()
-        .frame(width: Constants.screenWidth, height: 290, alignment: .center)
+        .frame(width: Constants.screenWidth, alignment: .center)
         .background(Color.white)
         .clipped()
         .cornerRadius(20)

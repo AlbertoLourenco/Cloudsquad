@@ -28,14 +28,10 @@ struct PostImageView: View {
                 .font(.system(size: 16))
                 .foregroundColor(Color.black.opacity(0.6))
                 .padding(.horizontal)
-                .frame(alignment: .leading)
-            
-            Spacer()
+                .frame(width: Constants.screenWidth, alignment: .leading)
             
             SocialStatsView(post: post)
-                .frame(width: UIScreen.main.bounds.width - 40, height: 40)
-            
-            Spacer()
+                .frame(width: UIScreen.main.bounds.width - 40, height: 60)
         }
         .background(Color.white)
         .clipped()
@@ -46,7 +42,7 @@ struct PostImageView: View {
             SharedViewData.shared.post = self.post
             SharedViewData.shared.showPostsDetail = true
         }
-        .frame(width: Constants.screenWidth, height: 520)
+        .frame(width: Constants.screenWidth)
     }
 }
 
