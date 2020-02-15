@@ -10,6 +10,8 @@ import SwiftUI
 
 struct MenuView: View {
     
+    var user: User = Session.get()
+    
     var body: some View {
         
         VStack {
@@ -18,15 +20,27 @@ struct MenuView: View {
             
             VStack (spacing: 16) {
 
-                WebImage(imageURL: Session.get().pictureURL)
+                WebImage(imageURL: user.pictureURL)
                     .clipped()
                     .clipShape(Circle())
                     .frame(width: 75, height: 75)
                 
-                Text(Session.get().name)
-                    .fontWeight(.bold)
-                    .font(.system(size: 24))
-                    .foregroundColor(Color.black)
+                VStack (spacing: 5) {
+                    
+                    Text(user.name)
+                        .fontWeight(.bold)
+                        .font(.system(size: 24))
+                        .foregroundColor(Color.black)
+                    
+                    Text(user.email ?? "")
+                        .font(.system(size: 14))
+                        .foregroundColor(Color.gray)
+                    
+                    Text(user.twitter)
+                        .font(.system(size: 12))
+                        .foregroundColor(Color.blue)
+                }
+                .padding(10)
                 
                 Divider()
                     .frame(width: 150, alignment: .center)
