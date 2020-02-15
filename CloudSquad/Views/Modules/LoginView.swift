@@ -90,7 +90,7 @@ struct LoginView: View {
         }
     }
     
-    func handleSignInAction() {
+    private func handleSignInAction() {
         
         RequestManager.shared.login(email: email, password: password) { (result) in
             

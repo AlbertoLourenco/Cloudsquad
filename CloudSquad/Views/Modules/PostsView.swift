@@ -135,7 +135,7 @@ struct PostsView: View {
         .edgesIgnoringSafeArea(.all)
     }
     
-    func loadData() {
+    private func loadData() {
         
         withAnimation {
             self.isLoading = true
@@ -144,7 +144,10 @@ struct PostsView: View {
         RequestManager.shared.loadPosts { (response) in
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                self.isLoading = false
+                
+                withAnimation {
+                    self.isLoading = false
+                }
             }
             
             self.posts = response

@@ -12,9 +12,15 @@ class SharedViewData: ObservableObject {
     
     static let shared = SharedViewData()
     
-    @Published var post: Post?
+    @Published var post: Post = MockedData.post
+    
+    //  Modules
     
     @Published var showPosts: Bool = false
     @Published var showPostsAdd: Bool = false
     @Published var showPostsDetail: Bool = false
+    
+    //  ViewComponents
+    
+    @Published var showLightbox: Bool = false
 }

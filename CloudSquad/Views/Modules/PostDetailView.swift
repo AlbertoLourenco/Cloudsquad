@@ -10,6 +10,8 @@ import SwiftUI
 
 struct PostDetailView: View {
     
+    @ObservedObject var sharedData = SharedViewData.shared
+    
     @State var post: Post = MockedData.post
     
     var body: some View {
@@ -26,6 +28,12 @@ struct PostDetailView: View {
                            height: post.imageURL.isEmpty ? 0 : 210,
                            alignment: .center)
                     .clipped()
+                    .onTapGesture {
+                        
+                        withAnimation {
+                            self.sharedData.showLightbox = true
+                        }
+                    }
                 
                 ScrollView (.vertical) {
                     
@@ -68,19 +76,27 @@ struct PostDetailView: View {
                 
                 Spacer()
             }
+            
+            LightboxView(imageURL: SharedViewData.shared.post.imageURL)
+                .opacity(self.sharedData.showLightbox ? 1 : 0)
+                .animation(.linear)
         }
         .edgesIgnoringSafeArea(.all)
         .onAppear() {
-            
-            RequestManager.shared.loadPost(id: self.post.id) { (response) in
-                
-                if let object = response {
-                    self.post = object
-                }
-            }
+            self.loadData()
         }
         .onDisappear() {
             SharedViewData.shared.showPostsDetail = false
+        }
+    }
+    
+    private func loadData() {
+
+        RequestManager.shared.loadPost(id: self.post.id) { (response) in
+            
+            if let object = response {
+                self.post = object
+            }
         }
     }
 }

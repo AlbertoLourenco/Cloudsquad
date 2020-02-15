@@ -39,7 +39,7 @@ struct SheetView: View {
             }
             
             if self.type == .postDetail {
-                PostDetailView(post: SharedViewData.shared.post!)
+                PostDetailView(post: SharedViewData.shared.post)
             }
         }
     }

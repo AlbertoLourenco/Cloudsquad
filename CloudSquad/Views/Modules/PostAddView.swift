@@ -35,7 +35,9 @@ struct PostAddView: View {
                 
                 HStack {
                     
-                    MultilineTextField("Tell us what are you thinking now...", text: $postText, onCommit: nil)
+                    MultilineTextField("Tell us what are you thinking now...",
+                                       text: $postText,
+                                       onCommit: nil)
                         .padding(20)
                 }
                 .frame(minHeight: 100)
@@ -112,7 +114,7 @@ struct PostAddView: View {
         }
     }
     
-    func addPost() {
+    private func addPost() {
 
         UIApplication.shared.endEditing()
         
