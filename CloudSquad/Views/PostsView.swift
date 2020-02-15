@@ -14,8 +14,6 @@ struct PostsView: View {
     @State var dragState = CGSize.zero
     
     @State var posts: Array<Post> = []
-    @State var userName: String = Session.get().name.components(separatedBy: " ").first!
-    @State var userAvatar: String = Session.get().pictureURL
     
     var body: some View {
         
@@ -30,14 +28,32 @@ struct PostsView: View {
                 
                 HStack {
                     
+                    HStack {
+                        
+                        Image(systemName: "icloud")
+                            .frame(width: 40, height: 40, alignment: .center)
+                            .background(Color.white)
+                            .foregroundColor(Color(UIColor(red:0.23, green:0.20, blue:0.61, alpha:1.0)))
+                            .clipShape(Circle())
+                            .shadow(color: Color.gray.opacity(0.4), radius: 20, x: 0, y: 0)
+                            .padding(.leading, 0)
+                    }
+                    .frame(width: 50, height: 40, alignment: .trailing)
+                    .offset(x: 0, y: 0)
+                    .onTapGesture {
+                        self.showMenu = true
+                    }
+
+                    Text("Welcome!")
+                        .fontWeight(.bold)
+                        .font(.system(size: 20))
+                        .foregroundColor(Color.black)
+                    
                     Spacer()
                     
                     WebImage(imageURL: Session.get().pictureURL)
                         .frame(width: 44, height: 44)
                         .clipShape(Circle())
-                        .onTapGesture {
-                            self.showMenu = true
-                        }
                 }
                 .padding(.horizontal)
                 .padding(.top, 64)
@@ -67,6 +83,13 @@ struct PostsView: View {
 
             ButtonAdd()
 
+            Color.black.opacity(showMenu ? 0.5 : 0)
+                .animation(.linear)
+                .edgesIgnoringSafeArea(.all)
+                .onTapGesture {
+                    self.showMenu = false
+                }
+            
             MenuView()
                 .offset(y: showMenu ? 0 : Constants.screenSize.height)
                 .offset(y: dragState.height)
@@ -77,7 +100,12 @@ struct PostsView: View {
                 .gesture (
                     DragGesture()
                         .onChanged { value in
-                            self.dragState = value.translation
+                            
+                            if value.translation.height < -120 {
+                                self.dragState.height = -120
+                            }else{
+                                self.dragState = value.translation
+                            }
                         }
                         .onEnded { value in
                             
