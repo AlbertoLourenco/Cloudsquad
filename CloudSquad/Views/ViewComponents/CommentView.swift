@@ -18,14 +18,16 @@ struct CommentView: View {
             
             AuthorCommentView(comment: comment)
             
+            Divider()
+            
             Text(comment.text)
                 .fontWeight(.medium)
                 .font(.system(size: 16))
                 .foregroundColor(Color.black.opacity(0.6))
-                .padding(.horizontal)
+                .padding(10)
             
-            Divider()
         }
+        .padding(10)
         .frame(width: Constants.screenWidth, alignment: .center)
         .background(Color.white)
         .clipped()

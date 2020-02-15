@@ -40,7 +40,7 @@ struct AuthorCommentView: View {
         }
         .padding(.horizontal)
         .padding(.top, 10)
-        .padding(.bottom, 10)
+        .padding(.bottom, 5)
     }
 }
 

@@ -22,7 +22,9 @@ struct PostDetailView: View {
             VStack {
 
                 WebImage(imageURL: post.imageURL)
-                    .frame(width: UIScreen.main.bounds.width, height: 210, alignment: .center)
+                    .frame(width: UIScreen.main.bounds.width,
+                           height: post.imageURL.isEmpty ? 0 : 210,
+                           alignment: .center)
                     .clipped()
                 
                 ScrollView (.vertical) {
@@ -40,8 +42,8 @@ struct PostDetailView: View {
                                 .padding(.horizontal)
                             
                             SocialStatsView(post: post)
+                                .padding(10)
                         }
-                        .padding(.bottom, 20)
 
                         VStack (spacing: 20) {
 
@@ -49,10 +51,11 @@ struct PostDetailView: View {
                                 CommentView(comment: item)
                             }
                         }
+                        .opacity(post.comments.count == 0 ? 0 : 1)
+                        .animation(.spring(response: 0.5, dampingFraction: 0.6, blendDuration: 0))
+                        .padding(.bottom, 25)
                     }
                 }
-                Spacer()
-
             }
             
             ButtonClose()
