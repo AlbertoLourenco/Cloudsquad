@@ -21,15 +21,21 @@ struct PostDetailView: View {
         
         ZStack {
             
+            //----------------------------------
+            //  Background
+            //----------------------------------
+            
             Color.white.edgesIgnoringSafeArea(.all)
             Color.gray.opacity(0.1).edgesIgnoringSafeArea(.all)
             
-            VStack {
+            //----------------------------------
+            //  Content
+            //----------------------------------
+            
+            VStack (spacing: 0) {
 
                 WebImage(imageURL: post.imageURL)
-                    .frame(width: UIScreen.main.bounds.width,
-                           height: post.imageURL.isEmpty ? 0 : 210,
-                           alignment: .center)
+                    .frame(width: UIScreen.main.bounds.width, height: post.imageURL.isEmpty ? 0 : 210)
                     .clipped()
                     .onTapGesture {
                         
@@ -38,9 +44,9 @@ struct PostDetailView: View {
                         }
                     }
                 
-                ScrollView (.vertical) {
+                ScrollView (.vertical, showsIndicators: false) {
                     
-                    VStack {
+                    VStack (spacing: 30) {
 
                         VStack {
 
@@ -66,13 +72,18 @@ struct PostDetailView: View {
                         .animation(.spring(response: 0.5, dampingFraction: 0.6, blendDuration: 0))
                         .padding(.bottom, 25)
                     }
+                    .padding(.bottom, 110)
                 }
             }
+            
+            //----------------------------------
+            //  Close
+            //----------------------------------
             
             VStack {
 
                 ButtonClose()
-                    .offset(x: -4, y: 64)
+                    .offset(x: -4, y: 20)
                     .onTapGesture {
                         SharedViewData.shared.showPostsDetail = false
                     }
@@ -80,9 +91,9 @@ struct PostDetailView: View {
                 Spacer()
             }
             
-            LightboxView(imageURL: SharedViewData.shared.post.imageURL)
-                .opacity(self.sharedData.showLightbox ? 1 : 0)
-                .animation(.linear)
+            //----------------------------------
+            //  Comment
+            //----------------------------------
             
             ZStack {
 
@@ -113,10 +124,21 @@ struct PostDetailView: View {
                     .background(VisualEffectView(effect: UIBlurEffect(style: .light)).background(Color(UIColor(red:0.23, green:0.20, blue:0.61, alpha:1.0)).opacity(0.1)))
                     .clipShape(RoundedRectangle(cornerRadius: 40))
                     .clipped()
-                    .shadow(color: Color.gray.opacity(0.6), radius: 20, x: 0, y: 0)
+                    .shadow(color: Color.gray.opacity(0.4), radius: 20, x: 0, y: 0)
                 }
                 .offset(y: showingKeyboard ? -(keyboardHeight - 20) : (UIScreen.main.bounds.height/2) - 100)
                 .animation(.spring(response: 0.4, dampingFraction: 0.6, blendDuration: 0))
+            }
+            
+            //----------------------------------
+            //  Lightbox
+            //----------------------------------
+            
+            if self.sharedData.showLightbox {
+
+                LightboxView(imageURL: SharedViewData.shared.post.imageURL)
+                    .opacity(self.sharedData.showLightbox ? 1 : 0)
+                    .animation(.linear)
             }
         }
         .edgesIgnoringSafeArea(.all)

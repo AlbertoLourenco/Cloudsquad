@@ -32,7 +32,7 @@ struct CommentView: View {
         .background(Color.white)
         .clipped()
         .cornerRadius(20)
-        .shadow(color: Color.gray.opacity(0.4), radius: 20, x: 0, y: 0)
+        .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color.gray.opacity(0.2), lineWidth: 1))
     }
 }
 

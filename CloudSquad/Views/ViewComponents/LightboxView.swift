@@ -22,7 +22,6 @@ struct LightboxView: View {
         ZStack {
             
             VisualEffectView(effect: UIBlurEffect(style: .dark))
-                .edgesIgnoringSafeArea(.all)
                 .onTapGesture {
                     self.dismissDown()
                 }
@@ -43,7 +42,7 @@ struct LightboxView: View {
                         }
                 )
         }
-        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height, alignment: .center)
+        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         .onDisappear() {
             self.dismissDown()
         }

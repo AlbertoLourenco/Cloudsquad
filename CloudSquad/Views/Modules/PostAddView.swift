@@ -94,7 +94,6 @@ struct PostAddView: View {
                             .shadow(color: Color.gray.opacity(0.4), radius: 20, x: 0, y: 0)
                     }
                 }
-                .padding(.top, 20)
                 .frame(width: Constants.screenWidth, height: 60)
                 
                 Spacer()
