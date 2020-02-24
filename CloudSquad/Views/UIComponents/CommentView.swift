@@ -16,28 +16,29 @@ struct CommentView: View {
         
         VStack (alignment: .center) {
             
-            AuthorCommentView(comment: comment)
+            AuthorView(time: comment.time, author: comment.author)
             
             Divider()
+                .background(Color("Shadow"))
             
             Text(comment.text)
                 .fontWeight(.medium)
                 .font(.system(size: 16))
-                .foregroundColor(Color.black.opacity(0.6))
+                .foregroundColor(Color("Text-Primary"))
                 .padding(10)
-            
         }
         .padding(10)
         .frame(width: Constants.screenWidth, alignment: .center)
-        .background(Color.white)
+        .background(Color("Background-Secondary"))
         .clipped()
         .cornerRadius(20)
-        .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color.gray.opacity(0.2), lineWidth: 1))
+        .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color("Shadow"), lineWidth: 1))
     }
 }
 
 struct CommentView_Previews: PreviewProvider {
     static var previews: some View {
         CommentView()
+            .environment(\.colorScheme, .dark)
     }
 }

@@ -25,8 +25,7 @@ struct PostDetailView: View {
             //  Background
             //----------------------------------
             
-            Color.white.edgesIgnoringSafeArea(.all)
-            Color.gray.opacity(0.1).edgesIgnoringSafeArea(.all)
+            Color("Background-Primary").edgesIgnoringSafeArea(.all)
             
             //----------------------------------
             //  Content
@@ -50,12 +49,12 @@ struct PostDetailView: View {
 
                         VStack {
 
-                            AuthorPostView(post: post)
+                            AuthorView(time: post.time, author: post.author)
 
                             Text(post.text)
                                 .fontWeight(.medium)
                                 .font(.system(size: 16))
-                                .foregroundColor(Color.black.opacity(0.6))
+                                .foregroundColor(Color("Text-Primary"))
                                 .padding(.horizontal)
                             
                             SocialStatsView(post: post)
@@ -94,41 +93,39 @@ struct PostDetailView: View {
             //----------------------------------
             //  Comment
             //----------------------------------
-            
-            ZStack {
 
-                VStack {
+            VStack {
+                
+                HStack {
                     
-                    HStack {
-                        
-                        TextField("Leave a comment", text: $commentText)
-                            .frame(height: 20)
-                            .padding(15)
-                            .background(Color.white)
-                            .clipShape(RoundedRectangle(cornerRadius: 30))
-                        
-                        Button(action: {
-                            self.addComment()
-                        }) {
-                            Image(systemName: "paperplane.fill")
-                                .resizable()
-                                .renderingMode(Image.TemplateRenderingMode.template)
-                                .frame(width: 28, height: 28)
-                                .foregroundColor(Color(UIColor(red:0.23, green:0.20, blue:0.61, alpha:1.0)))
-                        }
-                        .frame(width: 50, height: 50)
+                    TextField("Leave a comment", text: $commentText)
+                        .frame(height: 20)
+                        .padding(15)
+                        .background(Color("Background-Primary"))
+                        .clipShape(RoundedRectangle(cornerRadius: 30))
+                    
+                    Button(action: {
+                        self.addComment()
+                    }) {
+                        Image(systemName: "paperplane.fill")
+                            .resizable()
+                            .renderingMode(Image.TemplateRenderingMode.template)
+                            .frame(width: 28, height: 28)
+                            .padding(10)
+                            .foregroundColor(Color("Send"))
                     }
-                    .padding(12)
-                    .padding(.leading, 5)
-                    .frame(width: Constants.screenWidth)
-                    .background(VisualEffectView(effect: UIBlurEffect(style: .light)).background(Color(UIColor(red:0.23, green:0.20, blue:0.61, alpha:1.0)).opacity(0.1)))
-                    .clipShape(RoundedRectangle(cornerRadius: 40))
-                    .clipped()
-                    .shadow(color: Color.gray.opacity(0.4), radius: 20, x: 0, y: 0)
+                    .frame(width: 50, height: 50)
                 }
-                .offset(y: showingKeyboard ? -(keyboardHeight - 20) : (UIScreen.main.bounds.height/2) - 100)
-                .animation(.spring(response: 0.4, dampingFraction: 0.6, blendDuration: 0))
+                .padding(15)
+                .padding(.leading, 5)
+                .frame(width: Constants.screenWidth)
+                .background(VisualEffectView(effect: UIBlurEffect(style: .regular)).background(Color(UIColor(red:0.23, green:0.20, blue:0.61, alpha:1.0)).opacity(0.1)))
+                .clipShape(RoundedRectangle(cornerRadius: 40))
+                .clipped()
+                .shadow(color: Color("Shadow"), radius: 20, x: 0, y: 0)
             }
+            .offset(y: showingKeyboard ? -(keyboardHeight - 20) : (UIScreen.main.bounds.height/2) - 100)
+            .animation(.spring(response: 0.4, dampingFraction: 0.6, blendDuration: 0))
             
             //----------------------------------
             //  Lightbox
@@ -196,5 +193,13 @@ struct PostDetailView: View {
 struct PostDetailView_Previews: PreviewProvider {
     static var previews: some View {
         PostDetailView()
+            .environment(\.colorScheme, .light)
+    }
+}
+
+struct PostDetailView_PreviewsDark: PreviewProvider {
+    static var previews: some View {
+        PostDetailView()
+            .environment(\.colorScheme, .dark)
     }
 }

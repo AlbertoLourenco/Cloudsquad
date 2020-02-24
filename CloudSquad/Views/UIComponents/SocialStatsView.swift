@@ -26,7 +26,7 @@ struct SocialStatsView: View {
                 Text("\(post.amountLikes)")
                     .font(.body)
                     .fontWeight(.semibold)
-                    .foregroundColor(Color.black.opacity(0.5))
+                    .foregroundColor(Color("Text-Secondary"))
             }
             .padding(.horizontal)
             
@@ -42,7 +42,7 @@ struct SocialStatsView: View {
                 Text("\(post.amountComments)")
                     .font(.body)
                     .fontWeight(.semibold)
-                    .foregroundColor(Color.black.opacity(0.5))
+                    .foregroundColor(Color("Text-Secondary"))
             }
             .padding(.horizontal)
         }
@@ -54,5 +54,6 @@ struct SocialStatsView: View {
 struct SocialStatsView_Previews: PreviewProvider {
     static var previews: some View {
         SocialStatsView()
+//            .environment(\.colorScheme, .dark)
     }
 }

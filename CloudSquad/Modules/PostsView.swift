@@ -20,10 +20,7 @@ struct PostsView: View {
         
         ZStack {
             
-            Color.white.edgesIgnoringSafeArea(.all)
-            
-            LinearGradient(gradient: Gradient(colors: [Color.gray.opacity(0.05), Color.white]), startPoint: .top, endPoint: .bottom)
-                .edgesIgnoringSafeArea(.all)
+            Color("Background-Primary").edgesIgnoringSafeArea(.all)
 
             VStack {
                 
@@ -37,7 +34,6 @@ struct PostsView: View {
                             .foregroundColor(Color(UIColor(red:0.23, green:0.20, blue:0.61, alpha:1.0)))
                             .clipShape(Circle())
                             .shadow(color: Color.gray.opacity(0.4), radius: 20, x: 0, y: 0)
-                            .padding(.leading, 0)
                     }
                     .frame(width: 50, height: 40, alignment: .trailing)
                     .offset(x: 0, y: 0)
@@ -48,7 +44,7 @@ struct PostsView: View {
                     Text("Welcome!")
                         .fontWeight(.bold)
                         .font(.system(size: 20))
-                        .foregroundColor(Color.black)
+                        .foregroundColor(Color("Text-Primary"))
                     
                     Spacer()
                     
@@ -65,11 +61,7 @@ struct PostsView: View {
                         
                         ForEach(self.posts) { item in
                             
-                            if item.imageURL.isEmpty {
-                                PostTextView(post: item)
-                            }else{
-                                PostImageView(post: item)
-                            }
+                            PostView(post: item)
                         }
                     }
                     .padding(EdgeInsets(top: 20, leading: 30, bottom: 120, trailing: 30))
@@ -83,6 +75,8 @@ struct PostsView: View {
             .animation(.spring(response: 0.5, dampingFraction: 0.6, blendDuration: 0))
 
             ButtonAdd()
+                .offset(y: showMenu ? 100 : 0)
+                .animation(.spring(response: 0.5, dampingFraction: 0.6, blendDuration: 0))
             
             LoadingView(lottieFile: "loading")
                 .opacity(isLoading ? 1 : 0)
@@ -156,5 +150,13 @@ struct PostsView: View {
 struct PostsView_Previews: PreviewProvider {
     static var previews: some View {
         PostsView()
+            .environment(\.colorScheme, .light)
+    }
+}
+
+struct PostsView_PreviewsDark: PreviewProvider {
+    static var previews: some View {
+        PostsView()
+            .environment(\.colorScheme, .dark)
     }
 }

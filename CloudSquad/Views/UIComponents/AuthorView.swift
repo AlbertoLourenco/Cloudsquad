@@ -1,5 +1,5 @@
 //
-//  AuthorPostView.swift
+//  AuthorView.swift
 //  CloudSquad
 //
 //  Created by Alberto Lourenço on 2/14/20.
@@ -8,44 +8,46 @@
 
 import SwiftUI
 
-struct AuthorPostView: View {
+struct AuthorView: View {
     
-    var post: Post = MockedData.post
+    var time: String = MockedData.post.time
+    var author: User = MockedData.post.author
     
     var body: some View {
         
         HStack {
             
-            WebImage(imageURL: post.author.pictureURL)
+            WebImage(imageURL: author.pictureURL)
                 .clipShape(Circle())
                 .frame(width: 65, height: 65)
             
             VStack (alignment: .leading) {
                 
-                Text(post.author.name)
+                Text(author.name)
                     .fontWeight(.semibold)
                     .font(.system(size: 18))
-                    .foregroundColor(Color.black)
+                    .foregroundColor(Color("Text-Primary"))
                 
-                Text(post.author.twitter)
-                    .foregroundColor(Color.blue)
+                Text(author.twitter)
+                    .foregroundColor(Color("Twitter"))
                 
-                Text(post.time)
+                Text(time)
                     .font(.system(size: 14))
-                    .foregroundColor(Color.gray.opacity(0.9))
+                    .foregroundColor(Color("Text-Secondary"))
             }
             .padding(.leading, 5)
             
             Spacer()
         }
         .padding(.horizontal)
-        .padding(.top, 10)
+        .padding(.top, 15)
         .padding(.bottom, 10)
     }
 }
 
-struct AuthorPostView_Previews: PreviewProvider {
+struct AuthorView_Previews: PreviewProvider {
     static var previews: some View {
-        AuthorPostView()
+        AuthorView()
+//            .environment(\.colorScheme, .dark)
     }
 }

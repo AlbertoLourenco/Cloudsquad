@@ -22,8 +22,7 @@ struct PostAddView: View {
         
         ZStack {
             
-            Color.white.edgesIgnoringSafeArea(.all)
-            Color.gray.opacity(0.1).edgesIgnoringSafeArea(.all)
+            Color("Background-Primary").edgesIgnoringSafeArea(.all)
             
             VStack (spacing: 15) {
 
@@ -41,7 +40,7 @@ struct PostAddView: View {
                         .padding(20)
                 }
                 .frame(minHeight: 100)
-                .background(Color.white)
+                .background(Color("Background-Secondary"))
                 
                 HStack {
 
@@ -51,7 +50,7 @@ struct PostAddView: View {
                             .opacity(postImage == nil ? 1 : 0)
                             .frame(width: 170, alignment: postImage == nil ? .trailing : .leading)
                             .padding(10)
-                            .foregroundColor(postImage == nil ? Color.gray.opacity(0.6) : Color.clear)
+                            .foregroundColor(postImage == nil ? Color("Text-Secondary") : Color.clear)
                         
                         postImage?
                             .resizable()
@@ -60,15 +59,15 @@ struct PostAddView: View {
                         
                         Image(systemName: postImage == nil ? "camera" : "xmark")
                             .frame(width: 60, height: 60)
-                            .background(Color.white)
-                            .foregroundColor(postImage == nil ? Color(UIColor(red:0.23, green:0.20, blue:0.61, alpha:1.0)) : Color.red)
+                            .background(Color("Background-Secondary"))
+                            .foregroundColor(postImage == nil ? Color("Camera") : Color.red)
                             .clipShape(Circle())
-                            .shadow(color: Color.gray.opacity(0.4), radius: 20, x: 0, y: 0)
+                            .shadow(color: Color("Shadow"), radius: 20, x: 0, y: 0)
                     }
                     .frame(width: 190, height: 60, alignment: .leading)
-                    .background(Color.white)
+                    .background(Color("Background-Primary"))
                     .clipShape(RoundedRectangle(cornerRadius: 30))
-                    .shadow(color: Color.gray.opacity(0.4), radius: 20, x: 0, y: 0)
+                    .shadow(color: Color("Shadow"), radius: 20, x: 0, y: 0)
                     .animation(.spring())
                     .onTapGesture {
                         
@@ -133,5 +132,13 @@ struct PostAddView: View {
 struct PostAddView_Previews: PreviewProvider {
     static var previews: some View {
         PostAddView()
+            .environment(\.colorScheme, .light)
+    }
+}
+
+struct PostAddView_PreviewsDark: PreviewProvider {
+    static var previews: some View {
+        PostAddView()
+            .environment(\.colorScheme, .dark)
     }
 }
