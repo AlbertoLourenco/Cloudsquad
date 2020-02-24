@@ -51,7 +51,11 @@ struct MenuView: View {
                     .font(.system(size: 16, weight: .regular))
                     .frame(width: 120, alignment: .center)
                     .onTapGesture {
+                        
                         Session.logout()
+                        
+                        SharedViewData.shared.showLogin = true
+                        SharedViewData.shared.showPosts = false
                     }
             }
             .frame(maxWidth: .infinity)

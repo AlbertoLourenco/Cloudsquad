@@ -10,7 +10,7 @@ import SwiftUI
 
 struct Session {
     
-    static private var user: User!
+    static private var user: User = MockedData.user
     
     static func authenticated() -> Bool {
         return UserDefaults.standard.integer(forKey: "Auth_id") > 0

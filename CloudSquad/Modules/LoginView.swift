@@ -62,7 +62,6 @@ struct LoginView: View {
             .opacity(show ? 1 : 0)
             .offset(y: showingKeyboard ? -100 : 0)
             .animation(.spring(response: 0.6, dampingFraction: 0.8, blendDuration: 0))
-
         }
         .edgesIgnoringSafeArea(.all)
         .onDisappear() {
@@ -94,6 +93,7 @@ struct LoginView: View {
             
             if result {
                 SharedViewData.shared.showPosts = true
+                SharedViewData.shared.showLogin = false
             }
         }
     }

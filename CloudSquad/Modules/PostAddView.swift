@@ -62,6 +62,8 @@ struct PostAddView: View {
                             .background(Color("Background-Secondary"))
                             .foregroundColor(postImage == nil ? Color("Camera") : Color.red)
                             .clipShape(Circle())
+                            .rotationEffect(Angle(degrees: postImage == nil ? 0 : 180))
+                            .animation(.spring())
                             .shadow(color: Color("Shadow"), radius: 20, x: 0, y: 0)
                     }
                     .frame(width: 190, height: 60, alignment: .leading)

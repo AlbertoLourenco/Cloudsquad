@@ -16,6 +16,7 @@ class SharedViewData: ObservableObject {
     
     //  Modules
     
+    @Published var showLogin: Bool = false
     @Published var showPosts: Bool = false
     @Published var showPostsAdd: Bool = false
     @Published var showPostsDetail: Bool = false

@@ -21,17 +21,19 @@ struct ContainerView: View {
             //---------------------------
             
             if Session.authenticated() {
+                
                 PostsView()
-            }else{
+
                 LoginView()
-            }
-            
-            //---------------------------
-            //  Posts - List
-            //---------------------------
-            
-            if viewStates.showPosts {
+                    .opacity(viewStates.showLogin ? 1 : 0)
+                    .animation(.easeOut)
+            }else{
+                
+                LoginView()
+
                 PostsView()
+                    .opacity(viewStates.showPosts ? 1 : 0)
+                    .animation(.easeOut)
             }
             
             //---------------------------
@@ -50,6 +52,7 @@ struct ContainerView: View {
                 SheetView(type: .postDetail)
             }
         }
+        .background(Color("Background-Primary"))
     }
 }
 
